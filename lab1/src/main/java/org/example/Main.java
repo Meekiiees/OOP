@@ -6,15 +6,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enter numbers: ");
-        Scanner scanner = new Scanner(System.in);
-        String numbers = scanner.nextLine();
-        int res;
+        try {
+            System.out.println("Enter numbers: ");
+            Scanner scanner = new Scanner(System.in);
+            String numbers = scanner.nextLine();
 
-        StringCalculator sum = new StringCalculator();
+            int res;
 
-        res = sum.add(numbers);
-        System.out.println("Result is " + res);
+            StringCalculator sum = new StringCalculator();
+
+            res = sum.add(numbers);
+            System.out.println("Result is " + res);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
 }
