@@ -11,8 +11,11 @@ public class StringCalculator {
 
         String userDelim = "";
         if (numbers.startsWith("//")){
-            userDelim = String.valueOf(numbers.charAt(2));
-            numbers = numbers.substring(4);
+            int end = numbers.indexOf("]");
+            for (int i = 3; i < end; i++) {
+                userDelim += String.valueOf(numbers.charAt(i));
+            }
+            numbers = numbers.substring(end+2);
 
             numbers = numbers.replace(userDelim, ",");
         }

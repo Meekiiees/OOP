@@ -21,9 +21,12 @@ public class StringCalculatorTest {
             Assertions.assertEquals(6, sc.add("//*1\n1,3*1"));
 
             Assertions.assertThrows(IllegalArgumentException.class, () -> sc.add("1,-3"));
-            Assertions.assertThrows(IllegalArgumentException.class, () -> sc.add("//[*]1\n1,3*-1"));
+            Assertions.assertThrows(IllegalArgumentException.class, () -> sc.add("//*1\n1,3*-1"));
 
-            Assertions.assertEquals(1005, sc.add("//[*]1\n1,3*1000*2000"));
+            Assertions.assertEquals(1005, sc.add("//*\n1,3*1000*2000"));
+
+            Assertions.assertEquals(6, sc.add("//[***]\n1***2***3"));
+            Assertions.assertEquals(6, sc.add("//[***]\n1***1,1\n3"));
 
         } catch (Exception e){
             System.out.println(e.getMessage());
