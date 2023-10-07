@@ -9,20 +9,25 @@ public class StringCalculator {
             return sum;
         }
 
-        String userDelim = "";
-        if (numbers.startsWith("//")){
-            int end = numbers.indexOf("]");
-            for (int i = 3; i < end; i++) {
-                userDelim += String.valueOf(numbers.charAt(i));
-            }
-            numbers = numbers.substring(end+2);
+        String n;
+        if (numbers.startsWith("//")) {
+            n = numbers;
+            int end = numbers.indexOf("]\n");
+            String userDelims = numbers.substring(2, end);
+            n = numbers.substring(end + 2);
 
-            numbers = numbers.replace(userDelim, ",");
+            String[] delims = userDelims.split(String.valueOf("]"));
+            for (String el : delims) {
+                el = el.substring(1);
+                n = n.replace(el, ",");
+            }
+            n = n.replace("\n", ",");
+
+        }else {
+            n = numbers.replace("\n", ",");
         }
 
-        numbers = numbers.replace("\n", ",");
-
-        String[] nums = numbers.split(String.valueOf(','));
+        String[] nums = n.split(String.valueOf(','));
         ArrayList<Integer> numsArr = new ArrayList<>();
         ArrayList<Integer> negNumsArr = new ArrayList<>();
         for (String el : nums){
@@ -45,4 +50,5 @@ public class StringCalculator {
         }
         return sum;
     }
+
 }
