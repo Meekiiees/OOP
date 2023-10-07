@@ -17,6 +17,9 @@ public class StringCalculatorTest {
             Assertions.assertEquals(25, sc.add("1,1,1,1,21"));
 
             Assertions.assertEquals(6, sc.add("1\n2,3"));
+
+            Assertions.assertEquals(6, sc.add("//*1\n1,3*1"));
+
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
