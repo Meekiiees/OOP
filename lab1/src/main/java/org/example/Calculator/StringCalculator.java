@@ -28,7 +28,9 @@ public class StringCalculator {
                 negNumsArr.add(temp);
             }
 
-            numsArr.add(temp);
+            if (temp <= 1000) {
+                numsArr.add(temp);
+            }
         }
         if (!negNumsArr.isEmpty()){
             String negs = negNumsArr.toString();
