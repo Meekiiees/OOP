@@ -20,6 +20,9 @@ public class StringCalculatorTest {
 
             Assertions.assertEquals(6, sc.add("//*1\n1,3*1"));
 
+            Assertions.assertThrows(IllegalArgumentException.class, () -> sc.add("1,-3"));
+            Assertions.assertThrows(IllegalArgumentException.class, () -> sc.add("//[*]1\n1,3*-1"));
+
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
