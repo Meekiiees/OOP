@@ -12,11 +12,9 @@ public class Main {
         int res;
 
         StringCalculator sum = new StringCalculator();
-        try {
-            res = sum.add(numbers);
-            System.out.println("Result is " + res);
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+
+        res = sum.add(numbers);
+        System.out.println("Result is " + res);
+
     }
 }
