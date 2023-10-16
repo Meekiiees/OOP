@@ -9,7 +9,7 @@ public class Main {
         try {
             System.out.println("Enter numbers: ");
             Scanner scanner = new Scanner(System.in);
-            String numbers = scanner.nextLine();
+            String numbers = "//[**][***][*][=][==]\n1***1*1,1\n1==1=1";
 
             int res;
 

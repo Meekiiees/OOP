@@ -1,6 +1,8 @@
 package org.example.Calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class StringCalculator {
     public int add(String numbers) throws IllegalArgumentException {
@@ -17,6 +19,9 @@ public class StringCalculator {
             n = numbers.substring(end + 2);
 
             String[] delims = userDelims.split(String.valueOf("]"));
+
+            Arrays.sort(delims, Comparator.comparing(String::length).reversed());
+
             for (String el : delims) {
                 el = el.substring(1);
                 n = n.replace(el, ",");

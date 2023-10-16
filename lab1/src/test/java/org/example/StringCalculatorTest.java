@@ -28,6 +28,7 @@ public class StringCalculatorTest {
             Assertions.assertEquals(10, sc.add("//[*][%]\n1*2%3,2\n2"));
 
             Assertions.assertEquals(10, sc.add("//[***][%]\n1***2%3,2\n2"));
+            Assertions.assertEquals(7, sc.add("//[**][***][*][=][==]\n1***1*1,1\n1==1=1"));
 
         } catch (Exception e){
             System.out.println(e.getMessage());
